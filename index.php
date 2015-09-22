@@ -11,7 +11,7 @@
 
     <!-- CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -29,15 +29,25 @@
 <div class="container">
     <h1 class="text-center">
         Brunel University London is currently at Week:
+
+        <span id="weeks">
         <?php
         include_once 'countWeek.php';
         echo countWeeksFromFreshers();
         ?>
+        </span>
+
     </h1>
 </div>
 
 
-<script src="js/bootstrap.min.js"></script>
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted text-center">Created by <a href="https://twitter.com/Liammar">Liam</a></p>
+        <p class="text-muted text-center">You should join the  <a href="http://brunelstudents.com/societies/tech/">Tech Society</a> :)</p>
+    </div>
+</footer>
+
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="js/ie10-viewport-bug-workaround.js"></script>
 </body>
