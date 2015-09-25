@@ -15,7 +15,7 @@ function countWeeksFromFreshers(){
     return dateDiffInWeeks($freshers_start_date,date('m/d/Y'));
 }
 
-/**
+/** Thanks to vascowhite from stackoverflow for this function.
  * @param $date1 - The beginning date of week 0
  * @param $date2 - The current date
  * @return float - rounded down number of weeks since beginning of week 0
