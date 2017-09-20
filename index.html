@@ -30,12 +30,28 @@
     <h1 class="text-center">
         Brunel University London is currently at Week:
 
-        <span id="weeks">
-        <?php
-        include_once 'countWeek.php';
-        echo countWeeksFromFreshers();
-        ?>
-        </span>
+        <span id="weeks"></span>
+
+        <script>
+            function calculateWeeksBetween(date1, date2) {
+                // The number of milliseconds in one week
+                var ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
+                // Convert both dates to milliseconds
+                var date1_ms = date1.getTime();
+                var date2_ms = date2.getTime();
+                // Calculate the difference in milliseconds
+                var difference_ms = Math.abs(date1_ms - date2_ms);
+                // Convert back to weeks and return hole weeks
+                return Math.floor(difference_ms / ONE_WEEK);
+            }
+
+            var startDate = new Date('9/18/2017');
+            var currentDate = new Date(Date.now());
+
+            document.getElementById("weeks").innerHTML = calculateWeeksBetween(startDate, currentDate);
+
+
+        </script>
 
     </h1>
 </div>
@@ -60,7 +76,6 @@
 
     ga('create', 'UA-68017731-1', 'auto');
     ga('send', 'pageview');
-
 </script>
 
 </body>
