@@ -11,7 +11,7 @@
 function countWeeksFromFreshers(){
     date_default_timezone_set("Europe/London");
     //$freshers_start_date is the date (m/d/Y) of when freshers (week 0) begun, will need to be updated once a year.
-    $freshers_start_date = '9/14/2015';
+    $freshers_start_date = '9/18/2017';
     return dateDiffInWeeks($freshers_start_date,date('m/d/Y'));
 }
 
