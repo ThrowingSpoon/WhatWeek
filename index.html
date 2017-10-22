@@ -41,8 +41,19 @@
                 var date2_ms = date2.getTime();
                 // Calculate the difference in milliseconds
                 var difference_ms = Math.abs(date1_ms - date2_ms);
-                // Convert back to weeks and return hole weeks
-                return Math.floor(difference_ms / ONE_WEEK);
+
+                var differenceInWeeks = difference_ms/ONE_WEEK;
+
+                //Get the whole week number
+                var currentWeek = Math.floor(differenceInWeeks);
+                var nextWeek = currentWeek+1;
+
+                // If it is Sunday, meaning it will be the next week tomorrow, let them know
+                if ((differenceInWeeks%1)>0.8571428571428572){
+                    return currentWeek + ', it will be week ' + nextWeek + ' tomorrow.'
+                }
+                // Else let them know what week it is.
+                return currentWeek;
             }
 
             var startDate = new Date('9/18/2017');
